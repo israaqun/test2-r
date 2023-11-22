@@ -8,12 +8,17 @@ import Categories from '../components/web/Categories';
 import DashbordLayout from './DashbordLayout';
 import DashbordHome from '../components/dashboard/Home';
 import DashbordCategories from '../components/dashboard/Categories'
+import Register from '../components/dashboard/register';
 
 export const router = createBrowserRouter([
     {
       path: "/",
       element: <Layout />,
       children: [
+        {
+          path: "register",
+          element: <Register/>
+        },
         {
           path: "home",
           element: <Home />
