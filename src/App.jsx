@@ -17,6 +17,7 @@ import DashbordLayout from './layouts/DashbordLayout';
 import DashbordHome from './components/dashboard/Home';
 import DashbordCategories from './components/dashboard/Categories'
 import { useEffect, useState } from 'react';
+import CategoryDetails from "./components/web/CategoryDetails";
 
 function App() {
   
@@ -47,12 +48,18 @@ function App() {
           element: <Login saveCurrentUser = {saveCurrentUser} />
         },
         {
-          path: "home",
+         // path: "home",
+        // path: "/",
+        index:true,
           element: <Home />
         },
         {
           path: "categories",
           element: <Categories />
+        },
+        {
+          path: "products/category/:categoryId",
+          element: <CategoryDetails />
         },
         {
           path: "*",
@@ -71,6 +78,7 @@ function App() {
         path: "categories",
         element: <DashbordCategories />
       },
+   
       {
         path: "*",
         element: <h2>page not found --dashbord</h2>

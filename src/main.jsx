@@ -5,7 +5,20 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import 'react-toastify/dist/ReactToastify.css';
 import App from './App.jsx'
 import './index.css'
+import { ToastContainer } from 'react-toastify';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+
+const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <App />
+    <>
+
+<QueryClientProvider client={queryClient}>
+<ToastContainer/>
+        <App />
+    </QueryClientProvider>
+  
+    </>
+
 )
