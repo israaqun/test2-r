@@ -39,7 +39,7 @@ function DashboardNavbar() {
         <ul className="dropdown-menu ">
           <li><Link className="dropdown-item" to="/register">register</Link></li>
           <li><hr className="dropdown-divider" /></li>
-          <li><a className="dropdown-item" href="#">login</a></li>
+          <li><Link className="dropdown-item" to="/login">login</Link></li>
         </ul>
       </li>
         </ul>

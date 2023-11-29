@@ -9,3 +9,11 @@ export const registerSchema =yup.object({
 
 
 })
+
+export const loginSchema =yup.object({
+
+    email:yup.string().required('email is required'),
+    password:yup.string().required('password is required').min(3,'minum is 3')
+
+
+})

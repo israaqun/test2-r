@@ -9,6 +9,7 @@ import DashbordLayout from './DashbordLayout';
 import DashbordHome from '../components/dashboard/Home';
 import DashbordCategories from '../components/dashboard/Categories'
 import Register from '../components/dashboard/register';
+import Login from '../components/web/login/Login';
 
 export const router = createBrowserRouter([
     {
@@ -18,6 +19,10 @@ export const router = createBrowserRouter([
         {
           path: "register",
           element: <Register/>
+        },
+        {
+          path: "login",
+          element: <Login/>
         },
         {
           path: "home",

@@ -2,9 +2,10 @@ import React from 'react'
 import Input from '../pages/Input'
 import axios from 'axios';
 import { useFormik } from 'formik';
+import { toast } from 'react-toastify'
 
 import { registerSchema } from '../web/validation/Validate';
-
+// file has no value so it requires special tactic
 export default function Register() {
    const initialValues={
         userName:'',
@@ -45,7 +46,20 @@ export default function Register() {
         const{data}= await axios.post('https://ecommerce-node4.vercel.app/auth/signup',formData);
 
 
-        console.log(data)
+        if(data.message === "success"){
+            formik.resetForm();
+            toast('Account Created Successfuly, plz verify your email to login', {
+                position: "bottom-center",
+                autoClose: false,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                })
+        
+    }
     };
     const formik= useFormik({
 
