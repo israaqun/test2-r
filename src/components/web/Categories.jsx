@@ -1,13 +1,19 @@
 import axios from 'axios'
-import React from 'react'
+import React, { useContext } from 'react'
 import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { CartContext } from '../../context/Cart';
 function Categories() {
+  console.log(import.meta.env.VITE_URL_API)
+
   const getCategories = async() => {
     const {data} = await axios.get (`${import.meta.env.VITE_URL_API}/categories`);
     return data;
   }
+
+  //const x = useContext(CartContext);
+  //console.log(x);
   const {data,isLoading} = useQuery('web_categories',getCategories);
   if (isLoading){
     return <p> loading....</p>

@@ -18,6 +18,7 @@ import DashbordHome from './components/dashboard/Home';
 import DashbordCategories from './components/dashboard/Categories'
 import { useEffect, useState } from 'react';
 import CategoryDetails from "./components/web/CategoryDetails";
+import { CartContextProvider } from "./context/Cart";
 
 function App() {
   
@@ -87,9 +88,12 @@ function App() {
   ]);
 
   return (
-    <>
-    <RouterProvider router={router} />
-    </>
+<CartContextProvider>
+
+<RouterProvider router={router} />
+</CartContextProvider>    
+  
+ 
   )
 }
 
